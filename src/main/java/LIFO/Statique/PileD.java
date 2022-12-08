@@ -11,7 +11,7 @@ public class PileD {
         contenu = null;
     }
 
-    public void Push(String S ) throws Exception {
+    public void Push(String S ) {
         if (index == - 1) {
             index++;
             contenu = new String[1];
