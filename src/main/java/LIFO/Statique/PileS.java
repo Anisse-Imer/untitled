@@ -1,46 +1,41 @@
 package LIFO.Statique;
 
+import java.security.InvalidParameterException;
 import java.util.Arrays;
 
 public class PileS {
-    private int taille;
+    private final int taille;
     private int index;
     private int[] contenu;
 
-    public PileS(int taille) throws Exception{
+    public PileS(int taille) throws InvalidParameterException{
         if(taille <= 0 )
-            throw new Exception("Taille invalide");
+            throw new InvalidParameterException("Taille invalide");
         index = -1;
         this.taille = taille;
         contenu = new int[taille];
     }
 
-    public void Push(int val) throws Exception {
+    public void Push(int val) throws StackFullException {
         if(StackFull())
-            throw new Exception("Stack is full");
+            throw new StackFullException("Stack is full");
         index++;
         contenu[index] = val;
     }
 
-    public void Pop() throws Exception{
+    public void Pop() throws EmptyException{
         if(Empty())
-            throw  new Exception("Stack is empty");
+            throw new EmptyException("Stack is empty");
         contenu[index] = 0;
         index = index - 1;
     }
 
     public boolean Empty(){
-        if(index == -1 ){
-            return true;
-        }
-        return false;
+        return (index == -1 );
     }
 
     public boolean StackFull(){
-        if(index == taille - 1){
-            return true;
-        }
-        return false;
+        return (index == taille - 1);
     }
 
     //Equivalent de Print

@@ -28,19 +28,16 @@ public class PileD {
         }
     }
 
-    public void Pop() throws Exception{
+    public void Pop() throws EmptyException{
         if(Empty())
-            throw  new Exception("Stack is empty");
+            throw new EmptyException("Stack is empty");
         contenu[index] = null;
         index = index - 1;
     }
 
     //bon
     public boolean Empty(){
-        if(index == -1 ){
-            return true;
-        }
-        return false;
+        return (index == -1 );
     }
 
     @Override

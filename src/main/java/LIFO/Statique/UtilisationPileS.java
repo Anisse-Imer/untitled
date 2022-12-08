@@ -1,7 +1,4 @@
 package LIFO.Statique;
-import java.io.*;
-import java.io.Console;
-
 public class UtilisationPileS {
     public static void main(String[] args) {
         try {
@@ -10,6 +7,8 @@ public class UtilisationPileS {
             p.Push(2);
             p.Push(7);
             p.Push(2);
+            p.Push(7);
+            p.Push(7);
             p.Push(7);
             System.out.println(p.toString());
         } catch (Exception e){
